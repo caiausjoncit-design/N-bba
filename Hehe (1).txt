@@ -349,9 +349,9 @@ local NormalMobFolder = workspace["World Mobs"]:WaitForChild("Mobs")
 
 local Radius = 1000
 
-local BringPos = CFrame.new(3296.45996, 4.20282078, 3297.97119, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+local BringPos = CFrame.new(3295.65625, 4.20298386, 3285.96851, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
-local HidePos = CFrame.new(3295.65625, 4.20298386, 3285.96851, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+local HidePos = CFrame.new(3296.45996, 4.20282078, 3297.97119, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
 local OrbNumber = "1"
 local AutoFarmOrb = false
