@@ -1102,6 +1102,120 @@ Tab2:AddToggle({
 		end
 	end
 })
-local Section = Tab:AddSection({
-    Name = "Droid"
+local AutoGodSejin = false
+
+Tab4:AddToggle({
+	Name = "Auto God Sejin",
+	Default = false,
+	Callback = function(Value)
+		AutoGodSejin = Value
+
+		if AutoGodSejin then
+			task.spawn(function()
+				local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+				local Remote = ReplicatedStorage
+					:WaitForChild("Packages")
+					:WaitForChild("_Index")
+					:WaitForChild("sleitnick_knit@1.4.7")
+					:WaitForChild("knit")
+					:WaitForChild("Services")
+					:WaitForChild("SkillManagerV2")
+					:WaitForChild("RE")
+					:WaitForChild("ExecuteSkill")
+
+				local SkillData = {
+					HoldAnimation = ReplicatedStorage:WaitForChild("Assets"):WaitForChild("SkillsV2"):WaitForChild("UniqueSets"):WaitForChild("Seijin Instinct"):WaitForChild("Animations"):WaitForChild("Hold_SpiritBomb"),
+					ReleaseAnimation = ReplicatedStorage:WaitForChild("Assets"):WaitForChild("SkillsV2"):WaitForChild("UniqueSets"):WaitForChild("Seijin Instinct"):WaitForChild("Animations"):WaitForChild("Release_SpiritBomb"),
+					HumCFrame = CFrame.new(
+						1078.374755859375,
+						832.61376953125,
+						1464.568603515625,
+						0.2109788954257965,
+						-7.579087224485193e-08,
+						0.9774906039237976,
+						-8.176831656214745e-09,
+						1,
+						7.93010244137804e-08,
+						-0.9774906039237976,
+						-2.472361870786699e-08,
+						0.2109788954257965
+					),
+					ResumeOnTimePassed = 0.1,
+					targetPos = vector.create(
+						1078.374755859375,
+						832.61376953125,
+						1414.568603515625
+					)
+				}
+
+				while AutoGodSejin do
+					Remote:FireServer("Weapons_22_2", SkillData, 9, true)
+					Remote:FireServer("Weapons_22_2", SkillData, 9, false)
+					task.wait(0.3)
+				end
+			end)
+		end
+	end
+})
+local Section4 = Tab:AddSection({
+    Name = "Weapons"
+})
+local AutoPsi = false
+
+Tab4:AddToggle({
+	Name = "Auto Psi",
+	Default = false,
+	Callback = function(Value)
+		AutoPsi = Value
+
+		if AutoPsi then
+			task.spawn(function()
+				while AutoPsi do
+					local args = {
+						"Weapons_13_3",
+						{
+							HoldAnimation = game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("SkillsV2"):WaitForChild("UniqueSets"):WaitForChild("Seijin Instinct"):WaitForChild("Animations"):WaitForChild("Hold_SpiritBomb"),
+							ReleaseAnimation = game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("SkillsV2"):WaitForChild("UniqueSets"):WaitForChild("Seijin Instinct"):WaitForChild("Animations"):WaitForChild("Release_SpiritBomb"),
+							HumCFrame = CFrame.new(
+								1078.374755859375,
+								832.61376953125,
+								1464.568603515625,
+								0.2109788954257965,
+								-7.579087224485193e-08,
+								0.9774906039237976,
+								-8.176831656214745e-09,
+								1,
+								7.93010244137804e-08,
+								-0.9774906039237976,
+								-2.472361870786699e-08,
+								0.2109788954257965
+							),
+							ResumeOnTimePassed = 0.1,
+							targetPos = vector.create(
+								1078.374755859375,
+								832.61376953125,
+								1414.568603515625
+							)
+						},
+						9,
+						true
+					}
+
+					game:GetService("ReplicatedStorage")
+						:WaitForChild("Packages")
+						:WaitForChild("_Index")
+						:WaitForChild("sleitnick_knit@1.4.7")
+						:WaitForChild("knit")
+						:WaitForChild("Services")
+						:WaitForChild("SkillManagerV2")
+						:WaitForChild("RE")
+						:WaitForChild("ExecuteSkill")
+						:FireServer(unpack(args))
+
+					task.wait(0.2)
+				end
+			end)
+		end
+	end
 })
