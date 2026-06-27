@@ -3,7 +3,7 @@ local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Window = OrionLib:MakeWindow({
-	Name = "Dragon Blox Crimson 🌻",
+	Name = "Dragon Blox Droid 🔘",
 	HidePremium = false,
 	SaveConfig = true,
 	ConfigFolder = "Config"
@@ -848,7 +848,7 @@ Tab2:AddToggle({
 
 OrionLib:Init()
 Tab2:AddToggle({
-    Name = "Nemba",
+    Name = "Zero",
     Default = false,
     Callback = function(v)
         getgenv().AntiDie = v
@@ -860,7 +860,7 @@ Tab2:AddToggle({
                     task.wait()
                     local char = game.Players.LocalPlayer.Character
                     if char and char:FindFirstChild("HumanoidRootPart") then
-                        char.HumanoidRootPart.CFrame = CFrame.new(192.335953, 193.583237, -1629.43811, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+                        char.HumanoidRootPart.CFrame = CFrame.new(-49.905941, 39.5981483, -8455.84277, 1, 0, 0, 0, 1, 0, 0, 0, 1)
                         char.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
                     end
                 end
