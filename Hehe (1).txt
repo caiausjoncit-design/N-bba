@@ -537,7 +537,7 @@ Section:AddToggle({
 })
 OrionLib:Init()
 Tab2:AddToggle({
-    Name = "Auto elmano ",
+    Name = "Auto Friez 00 đéo bt ",
     Default = false,
     Callback = function(v)
         getgenv().AntiDie = v
@@ -549,7 +549,7 @@ Tab2:AddToggle({
                     task.wait()
                     local char = game.Players.LocalPlayer.Character
                     if char and char:FindFirstChild("HumanoidRootPart") then
-                        char.HumanoidRootPart.CFrame = CFrame.new(548.273987, 482.597839, -300.462952)
+                        char.HumanoidRootPart.CFrame = CFrame.new(-813.343994, 494.996002, 1095.71802, 1, 0, 0, 0, 1, 0, 0, 0, 1)
                         char.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
                     end
                 end
@@ -672,7 +672,7 @@ Tab2:AddToggle({
     end
 })
 Tab2:AddToggle({
-    Name = "Auto Veggy",
+    Name = "Auto Jirren gay",
     Default = false,
     Callback = function(v)
         getgenv().AntiDie = v
