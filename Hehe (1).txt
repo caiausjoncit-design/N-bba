@@ -29,6 +29,11 @@ local Tab4 = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
+local Tab5 = Window:MakeTab({
+	Name = "Fake + Localplayer🐧",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
 local AutoFarm = false
 
 local LockRemote = game:GetService("ReplicatedStorage")
@@ -1294,3 +1299,130 @@ Tab4:AddToggle({
 		end
 	end
 })
+local AutoRebirth = false
+
+Tab5:AddToggle({
+	Name = "Auto rebirth [Real]",
+	Default = false,
+	Callback = function(Value)
+		AutoRebirth = Value
+
+		task.spawn(function()
+			while AutoRebirth do
+				local gp = game:GetService("Players").LocalPlayer.Stats.GamePasses:FindFirstChild("Auto Rebirth")
+				if gp then
+					gp.Value = true
+				end
+				task.wait(0.2)
+			end
+
+			local gp = game:GetService("Players").LocalPlayer.Stats.GamePasses:FindFirstChild("Auto Rebirth")
+			if gp then
+				gp.Value = false
+			end
+		end)
+	end
+})
+local AutoVIP = false
+
+Tab5:AddToggle({
+	Name = "Get Vip [Not real]",
+	Default = false,
+	Callback = function(Value)
+		AutoVIP = Value
+
+		task.spawn(function()
+			while AutoVIP do
+				local vip = game:GetService("Players").LocalPlayer.Stats.GamePasses:FindFirstChild("VIP")
+				if vip then
+					vip.Value = true
+				end
+				task.wait(0.2)
+			end
+
+			local vip = game:GetService("Players").LocalPlayer.Stats.GamePasses:FindFirstChild("VIP")
+			if vip then
+				vip.Value = false
+			end
+		end)
+	end
+})
+local AutoLuck = false
+
+Tab5:AddToggle({
+	Name = "2x Luck [cannot be determined]",
+	Default = false,
+	Callback = function(Value)
+		AutoLuck = Value
+
+		task.spawn(function()
+			while AutoLuck do
+				local luck = game:GetService("Players").LocalPlayer.Stats.GamePasses:FindFirstChild("2x Luck")
+				if luck then
+					luck.Value = true
+				end
+				task.wait(0.2)
+			end
+
+			local luck = game:GetService("Players").LocalPlayer.Stats.GamePasses:FindFirstChild("2x Luck")
+			if luck then
+				luck.Value = false
+			end
+		end)
+	end
+})
+
+
+
+-- Fake Damage TextBox
+Tab5:AddTextbox({
+    Name = "Fake Damage",
+    Default = "100",
+    TextDisappear = false,
+    Callback = function(Value)
+        local damageValue = tonumber(Value)
+        if not damageValue then 
+            OrionLib:MakeNotification({
+                Name = "Lỗi",
+                Content = "Vui lòng nhập số hợp lệ!",
+                Image = "rbxassetid://4483345998",
+                Time = 3
+            })
+            return 
+        end
+        
+        -- Áp dụng cho TẤT CẢ nhân vật trong workspace.Characters
+        for _, character in pairs(workspace.Characters:GetChildren()) do
+            if character:FindFirstChild("Status") and character.Status:FindFirstChild("Damage") then
+                character.Status.Damage.Value = damageValue
+            end
+        end
+        
+        OrionLib:MakeNotification({
+            Name = "Thành công",
+            Content = "Đã set Fake Damage = " .. damageValue .. " cho tất cả người chơi!",
+            Image = "rbxassetid://4483345998",
+            Time = 3
+        })
+    end    
+})
+
+-- Optional: Button để refresh (áp dụng lại giá trị hiện tại)
+Tab5:AddButton({
+    Name = "Refresh All Damage",
+    Callback = function()
+        local currentDamage = 100 -- Bạn có thể thay đổi default ở đây
+        for _, character in pairs(workspace.Characters:GetChildren()) do
+            if character:FindFirstChild("Status") and character.Status:FindFirstChild("Damage") then
+                character.Status.Damage.Value = currentDamage
+            end
+        end
+        OrionLib:MakeNotification({
+            Name = "Refresh",
+            Content = "Đã refresh Damage cho tất cả nhân vật!",
+            Time = 2
+        })
+    end
+})
+
+OrionLib:Init()
