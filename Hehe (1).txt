@@ -228,12 +228,12 @@ local Root = Character:WaitForChild("HumanoidRootPart")
 local Humanoid = Character:WaitForChild("Humanoid")
 
 -- Folders
-local EventMobFolder = workspace["World Mobs"]:WaitForChild("Event Mobs")
+local EventMobFolder = workspace["World Mobs"]:WaitForChild("Boss Mobs")
 local NormalMobFolder = workspace["World Mobs"]:WaitForChild("Mobs")
 
 -- Cài đặt
 local Radius = 1000
-local TargetCFrame = CFrame.new(-1110.51025, 34.1068344, -1580.15088, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+local TargetCFrame = CFrame.new(3296.45996, 4.20282078, 3297.97119, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
 local AutoFarmBring = false
 
@@ -349,11 +349,9 @@ local NormalMobFolder = workspace["World Mobs"]:WaitForChild("Mobs")
 
 local Radius = 1000
 
-local BringPos = CFrame.new(
-    -1103.71423, 36.1068344, -1593.16187
-)
+local BringPos = CFrame.new(3296.45996, 4.20282078, 3297.97119, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
-local HidePos = CFrame.new(-1102.59851, 38.1068344, -1571.24622, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+local HidePos = CFrame.new(3295.65625, 4.20298386, 3285.96851, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
 local OrbNumber = "1"
 local AutoFarmOrb = false
